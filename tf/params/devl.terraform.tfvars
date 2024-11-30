@@ -11,7 +11,7 @@
 aws-region         = "us-east-1"
 project-name       = "tf-template"
 bucket-base-name   = "sample-bucket"
-versioning-enabled = false
+versioning-enabled = true
 kms-master-key-id  = "arn:aws:kms:us-east-1:637423502513:key/494509e4-3bc5-44b8-9c4d-12449900d395"
 sse-algorithm      = "aws:kms"
 s3-lifecycle-rules = {
