@@ -1,0 +1,14 @@
+version: 0.1
+projects:
+  - path: tf/
+    name: devl
+    terraform_var_files:
+      - params/devl.terraform.tfvars
+  - path: tf/
+    name: test
+    terraform_var_files:
+      - params/test.terraform.tfvars
+  - path: tf/
+    name: prod
+    terraform_var_files:
+      - params/prod.terraform.tfvars
