@@ -1,0 +1,19 @@
+name: "Drift Detection"
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '*/15 * * * *'
+
+jobs:
+  drift-detection:
+    name: "drift-detection"
+    uses: subhamay-bhattacharyya/gh-action-reusable-aws-tf-wf/.github/workflows/drift-detection.yaml@main
+    with:
+      github-env: devl
+      tfvar-file: devl.terraform.tfvars
+      aws-region: ${{ vars.AWS_REGION }}
+      aws-role-arn: ${{ vars.DEVL_AWS_ROLE_ARN }}
+      aws-tf-state-bucket-name: ${{ vars.DEVL_AWS_TF_STATE_BUCKET_NAME }}
+    secrets:
+      git-token: ${{ secrets.GIT_TOKEN }}
