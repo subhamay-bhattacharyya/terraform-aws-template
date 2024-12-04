@@ -1,0 +1,13 @@
+name: "Terraform Delete"
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write # This is required for aws oidc connection
+  contents: read # This is required for actions/checkout
+  pull-requests: write # This is required for gh bot to comment PR
+
+jobs:
+  delete:
+    uses: subhamay-bhattacharyya/gh-action-reusable-aws-tf-wf/.github/workflows/destroy-pipeline.yaml@main

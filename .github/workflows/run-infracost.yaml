@@ -1,0 +1,12 @@
+name: "Run Infracost"
+
+on:
+  # pull_request:
+  #   types: [opened, synchronize, closed]
+  workflow_call:
+jobs:
+  create:
+    name: "run-infracost"
+    uses: subhamay-bhattacharyya/gh-action-reusable-aws-tf-wf/.github/workflows/infracost.yaml@main
+    # secrets:
+    #   infracost-api-key: ${{ secrets.INFRACOST_API_KEY }}
